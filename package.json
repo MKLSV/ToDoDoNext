@@ -1,5 +1,5 @@
 {
-  "name": "todo",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,5 +18,11 @@
     "react-redux": "^9.2.0",
     "redux": "^5.0.1",
     "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
