@@ -11,6 +11,7 @@ import { ListByTypes } from '../components/ListByTypes.jsx';
 import { ListDone } from '../components/ListDone.jsx';
 import AppHeader from '../components/AppHeader.jsx';
 import ConfettiEffect from '../components/ConfettiEffect.jsx';
+import Loader from '@/components/Loader';
 
 export default function TodoIndex() {
 
@@ -21,12 +22,13 @@ export default function TodoIndex() {
     const [onModal, setOnModal] = useState(false)
     const [sort, setSort] = useState('type')
     const [showConfetti, setShowConfetti] = useState(false);
-
+    const [onLodaer, setOnLoader] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 await loadTodos();
+                setOnLoader(false)
             } catch (err) {
                 console.error('Ошибка при загрузке задач:', err);
             }
@@ -62,6 +64,7 @@ export default function TodoIndex() {
     };
 
     return <div className="app">
+        {onLodaer ? <Loader /> : ''}
         <AppHeader user={user} sort={sort} setSort={setSort} setUser={setUser} />
         <div className="todo-app">
             <div className='add-btn' onClick={() => setOnModal(true)}>

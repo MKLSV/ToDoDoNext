@@ -29,7 +29,7 @@ export default function TaskModal({ setOnModal, todo, handleChecked }) {
                 {todo.dueDate && (
                     <div className="form-group">
                         <label htmlFor="dueDate">Дата выполнения:</label>
-                        <span>{todo.dueDate}</span>
+                        <span>{new Date(todo.dueDate).toISOString().split("T")[0]}</span>
                     </div>
                 )}
 

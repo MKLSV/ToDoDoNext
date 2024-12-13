@@ -5,7 +5,7 @@ export default function EditTask({ task, setIsEditing, onUpdateTodo }) {
     const [owner, setOwner] = useState(task.owner); // Новый параметр "чья задача"
     const [type, setType] = useState(task.type);
     const [text, setText] = useState(task.text);
-    const [dueDate, setDueDate] = useState(null);
+    const [dueDate, setDueDate] = useState(task.dueDate);
     const [repeat, setRepeat] = useState(task.repeat);
 
     const handleSubmit = async (e) => {
@@ -30,7 +30,7 @@ export default function EditTask({ task, setIsEditing, onUpdateTodo }) {
         setRepeat(false);
         setIsEditing(false)
     };
-
+    
     return (
         <div className="task-modal" onClick={() => setIsEditing(false)}>
             <form className="add-task-form" onSubmit={handleSubmit}  onClick={(e) => e.stopPropagation()}>
@@ -81,7 +81,7 @@ export default function EditTask({ task, setIsEditing, onUpdateTodo }) {
                     <input
                         type="date"
                         id="dueDate"
-                        value={dueDate ? dueDate.split("T")[0] : ""}
+                        value={dueDate ? new Date(dueDate).toISOString().split("T")[0] : ""} // Преобразование в формат YYYY-MM-DD
                         onChange={(e) => setDueDate(e.target.value)}
                         className="form-input"
                     />
