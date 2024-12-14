@@ -30,10 +30,10 @@ export default function EditTask({ task, setIsEditing, onUpdateTodo }) {
         setRepeat(false);
         setIsEditing(false)
     };
-    
+
     return (
         <div className="task-modal" onClick={() => setIsEditing(false)}>
-            <form className="add-task-form" onSubmit={handleSubmit}  onClick={(e) => e.stopPropagation()}>
+            <form className="add-task-form" onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
                 <h2 className="add-task-title">Добавить задачу</h2>
 
                 <div className="form-group">
@@ -61,6 +61,9 @@ export default function EditTask({ task, setIsEditing, onUpdateTodo }) {
                         <option value="задача">Задача</option>
                         <option value="постоянный расход">Постоянный расход</option>
                         <option value="покупки">Покупки</option>
+                        <option value="ремонт">Ремонт</option>
+                        <option value="ступро">СТУПРО</option>
+
                     </select>
                 </div>
 
