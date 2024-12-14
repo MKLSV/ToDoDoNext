@@ -11,6 +11,12 @@ export function ListByTypes({ todos, onRemoveTodo, onUpdateTodo, setShowConfetti
     const shoppingList = todos.filter(todo => (
         todo.type === 'покупки'
     ))
+    const remontList = todos.filter(todo => (
+        todo.type === 'ремонт'
+    ))
+    const stuproList = todos.filter(todo => (
+        todo.type === 'ступро'
+    ))
 
     return <div className="todo-list">
 
@@ -39,6 +45,26 @@ export function ListByTypes({ todos, onRemoveTodo, onUpdateTodo, setShowConfetti
             <div className="type-container">
                 <span className="title">Покупки</span>
                 {shoppingList.map(todo => (
+                    <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
+                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} />
+                    </div>
+                ))}
+            </div>
+            : ''}
+        {remontList.length ?
+            <div className="type-container">
+                <span className="title">Ремонт</span>
+                {remontList.map(todo => (
+                    <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
+                        <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} />
+                    </div>
+                ))}
+            </div>
+            : ''}
+        {stuproList.length ?
+            <div className="type-container">
+                <span className="title">Ступро</span>
+                {stuproList.map(todo => (
                     <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
                         <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} />
                     </div>
