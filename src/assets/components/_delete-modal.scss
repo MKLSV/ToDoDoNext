@@ -1,0 +1,20 @@
+.modal{
+  background-color: #fff;
+  padding: 15px;
+  width:80vw;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 black;
+
+  .btns{
+    display: flex;
+    justify-content: space-around;
+    button{
+      font-size: 1.1rem;
+      padding: 5px 10px;
+    }
+    .delete-btn{
+      font-weight: 600;
+      color: rgb(224, 46, 46);
+    }
+  }
+}

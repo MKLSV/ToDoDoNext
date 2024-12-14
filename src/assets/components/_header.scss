@@ -36,7 +36,7 @@
       }
       .user-options{
         position: absolute;
-        right: 20px;
+        right: 10px;
         top: 70px;
         background-color: #fff;
         padding: 5px;
@@ -46,11 +46,11 @@
         gap: 10px;
         z-index: 90;
         box-shadow: 0 0 10px 0 black;
-        width: 32vw;
+        width: 30vw;
         span{
           padding: 10px 5px;
           color: #141414;
-          font-size: 1.3rem;
+          font-size: 1rem;
         }
         .active{
           font-weight: 700;
@@ -67,13 +67,18 @@
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+    gap: 10px;
 
     .btn {
-      padding: 3px 15px;
+      padding: 3px 10px;
       border-radius: 10px;
       background-color: #fff;
       color: rgb(69, 68, 68);
       font-weight: 600;
+      min-width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &.type {
         background-color: rgb(216, 164, 182);

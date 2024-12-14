@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { saveTodo } from '../store/todo/todo.action.js'
 
 
-export default function AddTask({ setOnModal }) {
-    const [owner, setOwner] = useState("Для всех"); // Новый параметр "чья задача"
+export default function AddTask({ setOnModal, user }) {
+    const [owner, setOwner] = useState(user); // Новый параметр "чья задача"
     const [type, setType] = useState("задача");
     const [text, setText] = useState("");
     const [dueDate, setDueDate] = useState(null);
@@ -72,6 +72,8 @@ export default function AddTask({ setOnModal }) {
                         <option value="задача">Задача</option>
                         <option value="постоянный расход">Постоянный расход</option>
                         <option value="покупки">Покупки</option>
+                        <option value="ремонт">Ремонт</option>
+                        <option value="ступро">СТУПРО</option>
                     </select>
                 </div>
 

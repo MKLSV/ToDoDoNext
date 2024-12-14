@@ -71,7 +71,7 @@ export default function TodoIndex() {
                 <IoAddOutline />
             </div>
             {showConfetti && <ConfettiEffect setShowConfetti={setShowConfetti} />}
-            {onModal ? <AddTask setOnModal={setOnModal} /> : ''}
+            {onModal ? <AddTask setOnModal={setOnModal} user={user} /> : ''}
             {sort === 'data' ?
                 <ListByDate todos={filteredTodos} onRemoveTodo={handleRemoveTodo} onUpdateTodo={handleUpdateTodo} setShowConfetti={setShowConfetti} />
                 : sort === 'type' ?

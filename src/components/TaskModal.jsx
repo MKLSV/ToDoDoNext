@@ -1,7 +1,18 @@
 
 export default function TaskModal({ setOnModal, todo, handleChecked }) {
 
+    function formatToDayMonth(milliseconds) {
+        const date = new Date(milliseconds);
+        const day = date.getDate(); // Получаем день
+        const monthNames = [
+            "января", "февраля", "марта", "апреля", "мая",
+            "июня", "июля", "августа", "сентября", "октября",
+            "ноября", "декабря"
+        ];
+        const month = monthNames[date.getMonth()]; // Получаем название месяца
 
+        return `${day} ${month}`;
+    }
     return (
         <div className="task-modal" onClick={() => setOnModal(false)}>
             <form className="add-task-form" onClick={(e) => e.stopPropagation()} onSubmit={(e) => {
@@ -28,8 +39,8 @@ export default function TaskModal({ setOnModal, todo, handleChecked }) {
 
                 {todo.dueDate && (
                     <div className="form-group">
-                        <label htmlFor="dueDate">Дата выполнения:</label>
-                        <span>{new Date(todo.dueDate).toISOString().split("T")[0]}</span>
+                        <label htmlFor="dueDate">Выполнить до:</label>
+                        <span>{formatToDayMonth(todo.dueDate)}</span>
                     </div>
                 )}
 
@@ -38,7 +49,7 @@ export default function TaskModal({ setOnModal, todo, handleChecked }) {
                         <label htmlFor="repeat">
                             Повторять:
                         </label>
-                        <span>{todo.repeat}</span>
+                        <span>{todo.repeat ? ' Да' : 'Нет'}</span>
                     </div>
                 )}
 
