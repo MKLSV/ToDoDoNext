@@ -44,6 +44,13 @@ export default function TaskModal({ setOnModal, todo, handleChecked }) {
                     </div>
                 )}
 
+                {todo.completedAt && (
+                    <div className="form-group">
+                        <label htmlFor="dueDate">Выполннено:</label>
+                        <span>{formatToDayMonth(todo.dueDate)}</span>
+                    </div>
+                )}
+
                 {todo.dueDate && (
                     <div className="form-group">
                         <label htmlFor="repeat">

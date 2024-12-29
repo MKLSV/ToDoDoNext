@@ -8,6 +8,7 @@ const TaskSchema = new mongoose.Schema({
   repeat: Boolean,
   createdAt: { type: Number, default: Date.now },
   isCompleted: { type: Boolean, default: false },
+  completedAt: Number,
 });
 
 export default mongoose.models.Task || mongoose.model('Task', TaskSchema);

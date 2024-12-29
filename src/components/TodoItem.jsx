@@ -18,8 +18,21 @@ export function TodoItem({ todo, onRemoveTodo, onUpdateTodo, setShowConfetti }) 
     setOnDelete(false)
   };
   function handleChecked() {
-    saveTodo({ ...todo, isCompleted: !todo.isCompleted })
+    if (todo.repeat) {
+      const currentDate = new Date(todo.dueDate);
+      const day = currentDate.getDate();
+      const nextMonth = currentDate.getMonth() + 1; // Следующий месяц
+      const nextMonthDate = new Date(currentDate.getFullYear(), nextMonth, day);
+      const nextMonthMillis = nextMonthDate.getTime();
+
+      const nextTodo = { ...todo, dueDate: nextMonthMillis }
+      delete nextTodo._id
+      
+      saveTodo(nextTodo)
+    }
+    saveTodo({ ...todo, isCompleted: true, completedAt: Date.now() })
     setShowConfetti(true)
+    setOnModal(false)
   };
 
 
@@ -45,9 +58,6 @@ export function TodoItem({ todo, onRemoveTodo, onUpdateTodo, setShowConfetti }) 
                   }}
                 />
               </div>
-              {/* <div className="delite-contirm">
-                <span>удалить</span>
-              </div> */}
             </div>
           </div>
         )}

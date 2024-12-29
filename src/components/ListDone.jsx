@@ -22,7 +22,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo,  setShowConfetti }
             <div className="type-container">
                 <span className="title">Задачи</span>
                 {todoList.map(todo => (
-                    <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
+                    <div className='todo done' key={todo._id}>
                         <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}
@@ -33,7 +33,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo,  setShowConfetti }
             <div className="type-container">
                 <span className="title">Регулярные платежи</span>
                 {expensesList.map(todo => (
-                    <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
+                    <div className='todo done' key={todo._id}>
                         <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}
@@ -43,7 +43,7 @@ export function ListDone({ todos, onRemoveTodo, onUpdateTodo,  setShowConfetti }
             <div className="type-container">
                 <span className="title">Покупки</span>
                 {shoppingList.map(todo => (
-                    <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
+                    <div className='todo done' key={todo._id}>
                         <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo}  setShowConfetti={setShowConfetti}/>
                     </div>
                 ))}

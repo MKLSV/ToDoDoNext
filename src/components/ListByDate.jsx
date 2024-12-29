@@ -57,7 +57,7 @@ export function ListByDate({ todos, onRemoveTodo, onUpdateTodo, setShowConfetti 
                     </span>
                     {todos.map((todo) => (
                         <div className={todo.isCompleted ? 'todo done' : 'todo'} key={todo._id}>
-                            <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} />
+                            <TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onUpdateTodo={onUpdateTodo} setShowConfetti={setShowConfetti} done={true}/>
                         </div>
                     ))}
                 </div>
