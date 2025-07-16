@@ -126,7 +126,7 @@ bot.on('callback_query', async (callbackQuery) => {
             await bot.sendMessage(chatId, 'Не получилось сорян...');
         }
         await bot.answerCallbackQuery(callbackQuery.id);
-        await bot.sendMessage(chatId, `Задача ${updatedTask.text} выполнена!🥳`);
+        await bot.sendMessage(chatId, `Задача ${taskToUpdate.text} выполнена!🥳`);
         await bot.sendAnimation(chatId, 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmNpdmNsdXliN2pucmNtcnBnaTdoMDJ2MGM2bDAxZDdhd3AzaTR6YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/s2qXK8wAvkHTO/giphy.gif');
         return
     }
