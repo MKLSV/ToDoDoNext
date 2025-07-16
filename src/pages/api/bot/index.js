@@ -244,7 +244,7 @@ async function saveTask(taskData) {
     return
 }
 
-// export default async function handler(req, res) {
-//     // Эта функция теперь пустая или используется для других целей
-//     res.status(200).json({ status: 'Bot is running' });
-// }
+export default async function handler(req, res) {
+    // Эта функция теперь пустая или используется для других целей
+    res.status(200).json({ status: 'Bot is running' });
+}
